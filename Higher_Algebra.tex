@@ -1,0 +1,102 @@
+\documentclass[9pt]{ctexart}
+\CTEXsetup[format={\Large\bf}]{section}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\pagestyle{plain}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{braket}
+\usepackage{hyperref}
+\usepackage{ntheorem}
+\theorembodyfont{\normalfont}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}[section]
+\title{\bf{高等代数：提纲与注解}}
+\author{\textsc{Frederick Wang}}
+\date{}
+\begin{document}
+\maketitle
+\section{行列式}
+\subsection{$n$阶行列式}
+\begin{definition}
+    定义元素$a_{ij}$的余子式$M_{ij}$为行列式$|\bm{A}|$中划去第$i$行第$j$列后剩下的$n-1$行与$n-1$列元素组成的行列式.
+\end{definition}
+\begin{definition}
+    定义$n$阶行列式的值为
+    \[|\bm{A}|=a_{11}M_{11}-a_{21}M_{21}+...+(-1)^{n+1}a_{n1}M_{n1}\].
+\end{definition}
+\begin{definition}
+    在行列式$|\bm{A}|$中，$a_{ij}$的代数余子式定义为$A_{ij}=(-1)^{i+j}M_{ij}$，其中$M_{ij}$是$A_{ij}$的余子式.
+\end{definition}
+\begin{theorem}
+    行列式的性质如下
+    \begin{itemize}
+        \item[（1）] 上三角和下三角矩阵的行列式等于主对角线上元素之积.
+        \item[（2）] 若$n$阶行列式$|\bm{A}|$的某一行或某一列的元素全为0，则$|\bm{A}|=0$.
+        \item[（3）] 将行列式$|\bm{A}|$的某一行或某一列乘以常数$c$，则得到的行列式$|\bm{B}|=c|\bm{A}|$.
+        \item[（4）] 对换行列式不同的两行，则行列式的值改变符号.（绝对值不变）
+        \item[（5）] 若行列式的两行成比例，则$|\bm{A}|=0$. 特别地，如果两行相同，则行列式的值为0.
+        \item[（6）] 设$|\bm{A}|$，$|\bm{B}|$，$|\bm{C}|$是三个$n$阶行列式，它们的第$(i,j)$元素分别记为$a_{ij}$，$b_{ij}$， $c_{ij}$。则它们三个行列式的第$r$行元素适合条件：\[c_{rj}=a_{rj}+b_{rj}\]而其它元素相同，则$|\bm{C}|=|\bm{A}|+|\bm{B}|$.
+        \item[（7）] 将行列式的一行乘以某个常数$c$加到另一行上，行列式的值不变.
+        \item[*]上述性质（4）到性质（7）对于列同样成立.
+    \end{itemize}
+\end{theorem}
+\subsection{行列式的展开与转置}
+\begin{theorem}
+    设$|\bm{A}|$是$n$阶行列式，第$i$行第$j$列的元素$a_{ij}$的代数余子式为$A_{ij}$，则对任意的$r$，有展开式
+    \[|\bm{A}|=a_{1r}A_{1r}+...+a_{nr}A_{nr}\]
+    又对任意的$s\neq r$，有
+    \[a_{1r}A_{1s}+...+a_{nr}A_{ns}=0.\]
+    同样地，这个性质对于对行也同样成立.
+\end{theorem}
+\begin{theorem}
+    行列式转置后的值不变，即$|\bm{A}'|=|\bm{A}|$.
+\end{theorem}
+\begin{definition}
+    \textbf{（Cramer法则）}设有线性方程组$\bm{A}x=\bm{b}$，若$|\bm{A}|\neq 0$，则方程有且只有一组解：
+    \[x_i=\frac{|\bm{A}_i|}{|\bm{A}|}\]
+    其中$|\bm{A}_i|$是一个$n$阶行列式，它由$|\bm{A}|$去掉第$i$列换上列向量$\bm{b}$组成.
+\end{definition}
+\subsection{行列式的计算}
+\paragraph{Vande Monde行列式}
+\begin{equation*}
+    V_n=
+    \left(
+    \begin{matrix}
+        1&x_1&...&x_1^{n-1}\\
+        1&x_2&...&x_2^{n-1}\\
+        ...&...&...&...\\
+        1&x_n&...&x_n^{n-1}
+    \end{matrix}
+    \right)
+\end{equation*}
+\[|V_n|=\prod_{1\leq i< j\leq n}(x_j-x_i)\]
+\subsection{行列式的等价定义}
+
+\subsection{Laplace定理}
+
+
+
+
+
+
+
+
+
+
+
+\section{矩阵}
+\subsection{矩阵的概念}
+\subsection{矩阵的运算}
+\subsection{方阵的逆阵}
+\subsection{矩阵的初等变换与初等矩阵}
+\subsection{矩阵乘积的行列式与初等变换法求矩阵}
+\subsection{分块矩阵}
+\subsection{Cauchy-Binet公式}
+\section{线性空间}
+\end{document}
